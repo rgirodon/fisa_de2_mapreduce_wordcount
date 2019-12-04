@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.rygn.nosql.mapreduce</groupId>
+  <artifactId>first</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>first</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+	  
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.12</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.github.sakserv/hadoop-mini-clusters -->
+	<dependency>
+	    <groupId>com.github.sakserv</groupId>
+	    <artifactId>hadoop-mini-clusters</artifactId>
+	    <version>0.1.16</version>
+	    <type>pom</type>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.github.sakserv/hadoop-mini-clusters-common -->
+	<dependency>
+	    <groupId>com.github.sakserv</groupId>
+	    <artifactId>hadoop-mini-clusters-common</artifactId>
+	    <version>0.1.16</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.github.sakserv/hadoop-mini-clusters-mapreduce -->
+	<dependency>
+	    <groupId>com.github.sakserv</groupId>
+	    <artifactId>hadoop-mini-clusters-mapreduce</artifactId>
+	    <version>0.1.16</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.github.sakserv/hadoop-mini-clusters-hdfs -->
+	<dependency>
+	    <groupId>com.github.sakserv</groupId>
+	    <artifactId>hadoop-mini-clusters-hdfs</artifactId>
+	    <version>0.1.16</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.github.sakserv/property-parser -->
+	<dependency>
+	    <groupId>com.github.sakserv</groupId>
+	    <artifactId>property-parser</artifactId>
+	    <version>0.0.3</version>
+	    <scope>test</scope>
+	</dependency>
+
+  </dependencies>
+  <build>
+  	<plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
